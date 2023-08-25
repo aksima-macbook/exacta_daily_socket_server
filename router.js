@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
 
   // pusher.trigger("exacta-daily-socket-server", USER_COMMENT_TASK_BACKEND, body);
   
-  pusher.sendToUser("exacta-daily-socket-server", USER_COMMENT_TASK_BACKEND, body);
+  pusher.sendToUser("1345", "exacta-daily-socket-server", USER_COMMENT_TASK_BACKEND, body);
 
   res.status(200).json({ status: "success" })
 });
