@@ -47,7 +47,7 @@ router.post("/init", async (req, res) => {
     user_info: {
       name: body.full_name,
     },
-    watchlist: ['another_id_1', 'another_id_2']
+    watchlist: ['1345', '1293']
   };
   const authResponse = pusher.authenticateUser(socketId, user);
   console.log('authResponse')
