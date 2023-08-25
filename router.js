@@ -42,13 +42,26 @@ router.post("/init", async (req, res) => {
 
   const socketId = body.socket_id;
 
-  const user = {
+  let user = {
     id: `${body.id_user}`,
     user_info: {
       name: body.full_name,
     },
-    watchlist: ['1345', '1293']
+    watchlist: []
   };
+
+  if(body.id_user === 1293) {
+user = {
+  ...user,
+  watchlist: ['1345']
+}
+  } else {
+    user = {
+      ...user,
+      watchlist: ['1293']
+    }
+  }
+ 
   const authResponse = pusher.authenticateUser(socketId, user);
   console.log('authResponse')
   console.log(authResponse)
