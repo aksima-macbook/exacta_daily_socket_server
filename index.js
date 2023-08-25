@@ -1,7 +1,9 @@
+// "socket.io": "^3.0.4"
+
 const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
-const socketio = require("socket.io");
+// const socketio = require("socket.io");
 const cors = require("cors");
 const app = express();
 const jwt = require('jsonwebtoken');
@@ -20,13 +22,13 @@ app.use(router);
 
 const server = http.createServer(app);
 
-const io = socketio(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-    credentials: true
-  }
-});
+// const io = socketio(server, {
+//   cors: {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//     credentials: true
+//   }
+// });
 
 // const io = socketio(server);
 
